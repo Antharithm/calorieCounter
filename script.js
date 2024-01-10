@@ -7,5 +7,10 @@ const output = document.getElementById("output");
 let isError = false;
 
 function cleanInputString(str) {
-  const regex = /\+-/;
+  const regex = /[+-\s]/g;
+  return str.replace(regex, "");
+}
+
+function isInvalidInput(str) {
+  const regex = /[0-9]e[0-9]/i;
 }
