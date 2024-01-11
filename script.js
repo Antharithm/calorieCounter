@@ -21,7 +21,7 @@ function addEntry() {
     `#${entryDropdown.value} .input-container`
   );
   const entryNumber =
-    targetInputContainer.querySelectorAll('input[type="text"]').length;
+    targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
   const HTMLString = `
   <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
   <input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
@@ -34,3 +34,5 @@ function addEntry() {
   />`;
   targetInputContainer.innerHTML += HTMLString;
 }
+
+addEntryButton.addEventListener("click", addEntry);
